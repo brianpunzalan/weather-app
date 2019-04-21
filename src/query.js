@@ -13,7 +13,7 @@ export const preprocessQuery = q => {
 
   // store all locations into an array
   let locations = []
-  let result = null;
+  let result = null
   while((result = regex.exec(query)) !== null) {
     locations.push(result[0].trim())
   }
