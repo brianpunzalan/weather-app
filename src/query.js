@@ -38,7 +38,7 @@ const query = async q => {
   await Promise.all(promiseData)
     .then(list => {
       list.forEach(item => 
-        console.log('Weather Data for ' + item.location, item.data))
+        console.log(`${item.dateTime}: Weather Data for ${item.location}`, item.data))
     })
 }
 
