@@ -1,0 +1,13 @@
+# Misc
+.DS_Store
+
+# Environment Variables
+.env
+.env.*
+
+# packages
+node_modules
+bower_components
+
+# lock files
+package-lock.json
