@@ -1,4 +1,5 @@
-import axios from "axios";
+import axios from "axios"
+import moment from "moment"
 
 class OpenWeatherMap {
   constructor(token) {
@@ -23,13 +24,12 @@ class OpenWeatherMap {
     }
 
     return new Promise((resolve, reject) => {
+      let dateTime = moment().format('LLLL')
       axios.get(this.baseURL + '/?' + params.toString())
         .then(response => {
-          // console.log('Weather Data for ' + q, response.data)
-          resolve({ location: q, data: response.data })
+          resolve({ dateTime: dateTime, location: q, data: response.data })
         })
         .catch(error => {
-          // console.log('Error: Failed to request Weather data for ' + q, error)
           reject(error)
         })
     })
